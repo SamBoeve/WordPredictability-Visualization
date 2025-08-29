@@ -51,7 +51,7 @@ export default function App() {
           />
           
           <TextVisualization
-            title=<span style={{fontWeight: 'bold', padding: '2px 6px', borderRadius: '4px' }}>Novel Corpus: GECO</span>
+            title=<span style={{fontWeight: 'bold', padding: '2px 6px', borderRadius: '4px' }}>Book Corpus: GECO</span>
             data={novelData}
             sliderValue={novelSlider}
             onSliderChange={(value) => setNovelSlider(value[0])}
