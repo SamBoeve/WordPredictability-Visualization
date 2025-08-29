@@ -2,7 +2,6 @@ import React, { useState, useMemo } from 'react';
 import { TextVisualization } from './components/TextVisualization';
 import { PredictabilityLegend } from './components/PredictabilityLegend';
 import { sentenceData, paragraphData, novelData } from './data/predictabilityData';
-import { Analytics } from '@vercel/analytics/next';
 import Lablogo from './assets/BogaertsLab_logo.png';
 
 export default function App() {
@@ -15,7 +14,7 @@ export default function App() {
     const combined = [...sentenceData, ...paragraphData, ...novelData];
     return { 
       maxSurprisal: 18, // Fixed max to prevent outliers from skewing colors
-      allData: combined
+      allData: combined, 
     };
   }, []);
 
@@ -29,6 +28,7 @@ export default function App() {
             The model used for this visualization is<span style={{fontStyle: 'italic', padding: '2px 6px', borderRadius: '4px' }}>gpt2-dutch-small</span>(de Vries & Nissim, 2020).
           </p>
         </div>
+        
 
         <div className="mb-6">
           <PredictabilityLegend allData={allData} maxSurprisal={maxSurprisal} />
@@ -69,10 +69,9 @@ export default function App() {
             <a href="https://www.bogaertslab.com/" target="_blank" rel="noopener noreferrer">
               <img src={Lablogo} className="logo mx-auto h-16 hover:opacity-80 transition-opacity" alt="BogaertsLab logo" />
             </a>
-          </div>
-        </div>
+          </div> 
+        </div> 
       </div>
-      <Analytics />
     </div>
   );
 }
