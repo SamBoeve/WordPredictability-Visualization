@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { TextVisualization } from './components/TextVisualization';
 import { PredictabilityLegend } from './components/PredictabilityLegend';
 import { sentenceData, paragraphData, novelData } from './data/predictabilityData';
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from '@vercel/analytics/next';
 import Lablogo from './assets/BogaertsLab_logo.png';
 
 export default function App() {
@@ -72,6 +72,7 @@ export default function App() {
           </div>
         </div>
       </div>
+      <Analytics />
     </div>
   );
 }
